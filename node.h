@@ -5,16 +5,15 @@
 class Node
 {
 public:
-    Node();
-
-    void createNode(int data);
-    void insertNode(int inData);
-    void inOrder(Node* root);
     Node(int data)
     {
         this->data = data;
         left = right = nullptr;
     }
+    void createNode(int data);
+    void insertNode(int inData);
+    void inOrder(Node* root);
+    void postOrder(Node* root);
     int data;
     Node* left;
     Node* right;

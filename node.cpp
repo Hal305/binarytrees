@@ -2,11 +2,6 @@
 #include <iostream>
 #include <stack>
 
-Node::Node()
-{
-
-}
-
 void Node::insertNode(int inData)
 {
     if (inData < data)
@@ -56,5 +51,27 @@ void Node::inOrder(Node *root)
         s.pop();
         std::cout << current->data << " ";
         current = current->right;
+    }
+}
+
+void Node::postOrder(Node *root)
+{
+    std::stack<Node *> s;
+    Node* current = root;
+    while (true)
+    {
+        while(current != nullptr)
+        {
+            s.push(current);
+            current = current->right;
+        }
+        if(s.empty())
+        {
+            break;
+        }
+        current = s.top();
+        s.pop();
+        std::cout << current->data << " ";
+        current = current->left;
     }
 }
