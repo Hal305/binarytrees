@@ -1,0 +1,19 @@
+#ifndef TREE_H
+#define TREE_H
+
+
+class Tree
+{
+public:
+    Tree();
+    int data;
+    struct Tree* left;
+    struct Tree* right;
+    Tree (int data) 
+        { 
+            this->data = data; 
+            left = right = nullptr; 
+        } 
+};
+
+#endif // TREE_H
