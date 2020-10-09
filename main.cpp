@@ -11,5 +11,6 @@ int main()
     root->left->left = new Node(4);
     root->right->right = new Node(5);
     root->inOrder(root);
+    root->postOrder(root);
     return 0;
 }

@@ -52,6 +52,7 @@ void Node::inOrder(Node *root)
         std::cout << current->data << " ";
         current = current->right;
     }
+    std::cout << "\n";
 }
 
 void Node::postOrder(Node *root)
