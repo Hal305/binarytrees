@@ -7,17 +7,6 @@
 
 int main()
 {
-    srand (time(NULL));
-
-    class Node* root = new Node(5);
-    root->insertNode(rand()%10+1);
-    root->insertNode(rand()%10+1);
-    root->insertNode(rand()%10+1);
-    root->insertNode(rand()%10+1);
-    root->insertNode(rand()%10+1);
-    root->insertNode(rand()%10+1);
-    root->insertNode(rand()%10+1);
-=======
     class Node* root = new Node(1);
     root->insertNode(6);
     root->insertNode(8);
@@ -29,8 +18,6 @@ int main()
     std::cout << "\n";
     root->postOrder(root);
     root->getNodeCount();
-
-
     std::cout << "\n";
     return 0;
 }

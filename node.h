@@ -16,7 +16,6 @@ private:
     int nodeCount;
     Node* left;
     Node* right;
-    int nodeCount;
 };
 
 #endif // TREE_H

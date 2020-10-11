@@ -18,19 +18,6 @@ void Node::insertNode(int inData)
             left->insertNode(inData); //Yes, call the function again to insert the value
         }else{
             left = new Node(inData); //No, let's make left
-
-    if (inData < data)
-    {
-        //Does left exist?
-        if (left)
-        {
-            //Yes, call the function again to insert the value
-            left->insertNode(inData);
-        }
-        else
-        {
-            //No, let's make left
-            left = new Node(inData);
         }
     }else{
         if(right){//Same procedure, but for right
@@ -40,6 +27,7 @@ void Node::insertNode(int inData)
         }
     }
 }
+
 
 void Node::inOrder(Node *root)
 {
@@ -93,6 +81,8 @@ void Node::reverseInOrder(Node *root)
 void Node::getNodeCount()
 {
     std::cout << std::endl << "Your Node Count Is: " << nodeCount << std::endl;
+}
+
 void Node::postOrder(Node *root)
 {
     if (root == nullptr)
