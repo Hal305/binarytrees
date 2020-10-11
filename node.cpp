@@ -170,3 +170,22 @@ void Node::postOrder(Node *root)
         std::cout << current->data << " ";
     }
 }
+
+
+void Node::GetPrintSpecificLevel(Node * root, int Level){
+    std::cout << "This level " << Level << " Contains The Following Data ";
+    printSpecificLevel(root, Level);
+}
+
+void Node::printSpecificLevel(Node* root, int Level)
+{
+    if (root == NULL)
+        return;
+    if (Level == 1)
+    std::cout << root->data << " ";
+    else if (Level > 1)
+    {
+        printSpecificLevel(root->left, Level-1);
+        printSpecificLevel(root->right, Level-1);
+    }
+}
