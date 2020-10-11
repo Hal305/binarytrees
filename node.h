@@ -1,7 +1,5 @@
 #ifndef TREE_H
 #define TREE_H
-#include <iostream>
-#include <vector>
 
 class Node
 {
@@ -10,6 +8,7 @@ public:
     void createNode(int data);
     void insertNode(int inData);
     void inOrder(Node* root);
+    void reverseInOrder(Node *root);
     void postOrder(Node* root);
     void getNodeCount();
 private:
@@ -17,6 +16,7 @@ private:
     int nodeCount;
     Node* left;
     Node* right;
+    int nodeCount;
 };
 
 #endif // TREE_H
