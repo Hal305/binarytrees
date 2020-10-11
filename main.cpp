@@ -1,7 +1,5 @@
 #include <iostream>
 #include "node.h"
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
 
 
 
@@ -18,6 +16,9 @@ int main()
     std::cout << "\n";
     root->postOrder(root);
     root->getNodeCount();
+    root->GetLevelCount(root);
+    root->GetTreeBalance(root);
+
     std::cout << "\n";
     return 0;
 }

@@ -10,12 +10,18 @@ public:
     void inOrder(Node* root);
     void reverseInOrder(Node *root);
     void postOrder(Node* root);
-    void getNodeCount();
+    int getNodeCount();
+    int GetLevelCount(Node *node);
+    int Height(Node* node);
+    bool isBalanced(Node* root);
+    bool GetTreeBalance(Node * root);
 private:
     int data;
     int nodeCount;
+    int levelCount;
     Node* left;
     Node* right;
+
 };
 
 #endif // TREE_H

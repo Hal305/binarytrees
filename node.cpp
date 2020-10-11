@@ -78,9 +78,57 @@ void Node::reverseInOrder(Node *root)
     }
 }
 
-void Node::getNodeCount()
+int Node::getNodeCount()
 {
-    std::cout << std::endl << "Your Node Count Is: " << nodeCount << std::endl;
+    std::cout << std::endl << "The Tree Has: " << nodeCount << " Nodes" << std::endl;
+    return nodeCount;
+}
+
+int Node::GetLevelCount(Node *node){
+    Height(node);
+    std::cout << std::endl << "The Tree Has: " << levelCount << " Levels" << std::endl;
+    return levelCount;
+}
+
+int Node::Height(Node *node){
+    if (node == NULL)
+            return 0;
+        else
+        {
+            /* compute the height of each subtree */
+            int lheight = Height(node->left);
+            int rheight = Height(node->right);
+
+            /* use the larger one */
+            if (lheight > rheight)
+                return(levelCount = lheight + 1);
+            else return(levelCount = rheight + 1);
+        }
+}
+
+bool Node::isBalanced(Node* root){
+    /* If tree is empty then return true */
+    if (root == NULL)
+        return 1;
+    /* Get the height of left and right sub trees */
+    int lh = Height(root->left);// for height of left subtree
+    int rh = Height(root->right);//for height of right subtree
+
+    if (abs(lh - rh) <= 1 && isBalanced(root->left) && isBalanced(root->right)) // Checks the difference of heights of each of the branches
+        return 1;
+
+    // If we reach here then tree is not height-balanced
+    return 0;
+}
+
+bool Node::GetTreeBalance(Node *root)
+{
+    if(isBalanced(root)){
+        std::cout << std::endl << "The Tree Is Balanced" << std::endl;
+    }else{
+        std::cout << std::endl << "The Tree Is Not Balanced" << std::endl;
+    }
+    return isBalanced(root);
 }
 
 void Node::postOrder(Node *root)
