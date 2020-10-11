@@ -19,12 +19,6 @@ void Node::insertNode(int inData)
         }else{
             left = new Node(inData); //No, let's make left
         }
-    }
-    else
-    {
-        //Same procedure, but for right
-        if(right)
-        {
     }else{
         if(right){//Same procedure, but for right
             right->insertNode(inData);
