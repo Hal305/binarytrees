@@ -2,20 +2,22 @@
 #include <iostream>
 #include <stack>
 
+Node::Node(int data)
+{
+    this->data = data;
+    left = right = nullptr;
+    nodeCount = 1;
+}
+
+
 void Node::insertNode(int inData)
 {
-    if (inData < data)
-    {
-        //Does left exist?
-        if (left)
-        {
-            //Yes, call the function again to insert the value
-            left->insertNode(inData);
-        }
-        else
-        {
-            //No, let's make left
-            left = new Node(inData);
+    nodeCount++;
+    if (inData < data){
+        if (left){ //Does left exist?
+            left->insertNode(inData); //Yes, call the function again to insert the value
+        }else{
+            left = new Node(inData); //No, let's make left
         }
     }
     else
@@ -23,10 +25,10 @@ void Node::insertNode(int inData)
         //Same procedure, but for right
         if(right)
         {
+    }else{
+        if(right){//Same procedure, but for right
             right->insertNode(inData);
-        }
-        else
-        {
+        }else{
             right = new Node(inData);
         }
     }
@@ -75,4 +77,9 @@ void Node::postOrder(Node *root)
         std::cout << current->data << " ";
         current = current->left;
     }
+}
+
+void Node::getNodeCount()
+{
+    std::cout << std::endl << "Your Node Count Is: " << nodeCount << std::endl;
 }

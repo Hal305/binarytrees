@@ -6,22 +6,17 @@
 class Node
 {
 public:
-    Node(int data)
-    {
-        this->data = data;
-        left = right = nullptr;
-    }
+    Node(int data);
     void createNode(int data);
     void insertNode(int inData);
     void inOrder(Node* root);
     void postOrder(Node* root);
+    void getNodeCount();
+private:
     int data;
+    int nodeCount;
     Node* left;
     Node* right;
-    std::vector<int> treekeys =
-    {50, 12, 95, 8, 100, 47, 83, 59, 32, 21, 77, 90, 20, 66, 45, 88};
-private:
-
 };
 
 #endif // TREE_H

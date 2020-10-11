@@ -1,16 +1,26 @@
 #include <iostream>
 #include "node.h"
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 
 
 int main()
 {
-    class Node* root = new Node(1);
-    root->left = new Node(2);
-    root->right = new Node(3);
-    root->left->left = new Node(4);
-    root->right->right = new Node(5);
+    srand (time(NULL));
+
+    class Node* root = new Node(5);
+    root->insertNode(rand()%10+1);
+    root->insertNode(rand()%10+1);
+    root->insertNode(rand()%10+1);
+    root->insertNode(rand()%10+1);
+    root->insertNode(rand()%10+1);
+    root->insertNode(rand()%10+1);
+    root->insertNode(rand()%10+1);
     root->inOrder(root);
     root->postOrder(root);
+    root->getNodeCount();
+
+
     return 0;
 }
