@@ -12,15 +12,20 @@ int main()
     root->insertNode(6);
     root->insertNode(9);
     root->insertNode(14);
+
     root->inOrder(root);
     std::cout << "\n";
     root->reverseInOrder(root);
     std::cout << "\n";
     root->postOrder(root);
+    std::cout << "\n";
     root->getNodeCount();
+    std::cout << "\n";
     root->GetLevelCount(root);
+    std::cout << "\n";
     root->GetTreeBalance(root);
-    root->GetPrintSpecificLevel(root, 3);
+    std::cout << "\n";
+    root->GetPrintSpecificLevel(root, 2);
     std::cout << "\n";
     return 0;
 }

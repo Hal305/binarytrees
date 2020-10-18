@@ -28,7 +28,6 @@ void Node::insertNode(int inData)
     }
 }
 
-
 void Node::inOrder(Node *root)
 {
     //Create a stack
@@ -170,7 +169,6 @@ void Node::postOrder(Node *root)
         std::cout << current->data << " ";
     }
 }
-
 
 void Node::GetPrintSpecificLevel(Node * root, int Level){
     std::cout << "This level " << Level << " Contains The Following Data ";
